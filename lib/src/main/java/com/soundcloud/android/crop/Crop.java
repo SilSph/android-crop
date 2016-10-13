@@ -27,6 +27,9 @@ public class Crop {
         String MAX_Y = "max_y";
         String AS_PNG = "as_png";
         String ERROR = "error";
+        String FIXED = "fixed";
+        String FIXED_X = "fixed_x";
+        String FIXED_Y = "fixed_y";
     }
 
     private Intent cropIntent;
@@ -67,6 +70,20 @@ public class Crop {
         cropIntent.putExtra(Extra.ASPECT_Y, 1);
         return this;
     }
+    
+    /**
+    * Set fixed crop size
+    *
+    * @param width Min width
+    * @param height Min height
+    */
+    public Crop withFixedSize(int width, int height) {      
+        cropIntent.putExtra(Extra.FIXED, true);
+        cropIntent.putExtra(Extra.FIXED_X, width);
+        cropIntent.putExtra(Extra.FIXED_Y, height);
+        return this;
+    }
+    /**
 
     /**
      * Set maximum crop size
