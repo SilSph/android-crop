@@ -76,6 +76,7 @@ class HighlightView {
     private float handleRadius;
     private float outlineWidth;
     private boolean isFocused;
+    private boolean isFixed;
 
     public HighlightView(View context) {
         viewContext = context;
@@ -97,12 +98,13 @@ class HighlightView {
         }
     }
 
-    public void setup(Matrix m, Rect imageRect, RectF cropRect, boolean maintainAspectRatio) {
+    public void setup(Matrix m, Rect imageRect, RectF cropRect, boolean maintainAspectRatio, boolean isFixed) {
         matrix = new Matrix(m);
 
         this.cropRect = cropRect;
         this.imageRect = new RectF(imageRect);
         this.maintainAspectRatio = maintainAspectRatio;
+        this.isFixed = isFixed;
 
         initialAspectRatio = this.cropRect.width() / this.cropRect.height();
         drawRect = computeLayout();
@@ -281,8 +283,10 @@ class HighlightView {
             // Convert to image space before sending to growBy()
             float xDelta = dx * (cropRect.width() / r.width());
             float yDelta = dy * (cropRect.height() / r.height());
-            growBy((((edge & GROW_LEFT_EDGE) != 0) ? -1 : 1) * xDelta,
-                    (((edge & GROW_TOP_EDGE) != 0) ? -1 : 1) * yDelta);
+            if(!isFixed) {
+                growBy((((edge & GROW_LEFT_EDGE) != 0) ? -1 : 1) * xDelta,
+                        (((edge & GROW_TOP_EDGE) != 0) ? -1 : 1) * yDelta);
+            }
         }
     }
 
