@@ -8,6 +8,6 @@
     <string name="crop__cancel" tools:ignore="ButtonCase">Indietro</string>
 
     <string name="go_crop">Ritaglia</string>
-    <string name="send_Arduino">Invia</string>
+
 
 </resources>
