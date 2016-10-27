@@ -4,7 +4,7 @@
     <string name="crop__wait">Attendere prego…</string>
     <string name="crop__pick_error">Nessuna immagine disponibile</string>
 
-    <string name="crop__done">Avanti</string>
+    <string name="crop__done">Conferma</string>
     <string name="crop__cancel" tools:ignore="ButtonCase">Indietro</string>
 
     <string name="go_crop">Ritaglia</string>
