@@ -7,7 +7,4 @@
     <string name="crop__done">Done</string>
     <string name="crop__cancel" tools:ignore="ButtonCase">Back</string>
 
-    <string name="go_crop">Crop</string>
-
-
 </resources>

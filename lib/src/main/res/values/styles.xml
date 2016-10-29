@@ -33,7 +33,7 @@
     </style>
 
     <style name="Crop.ActionButtonText.Done">
-        <item name="android:drawableRight">@drawable/ic_next</item>
+        <item name="android:drawableRight">@drawable/ic_done</item>
         <item name="android:text">@string/crop__done</item>
     </style>
 
